@@ -1,24 +1,19 @@
-# SOAI Architecture Overview
-
-This document describes the high-level architecture of the SOAI Digital Self system.
-
-## Core Architecture
-
-```mermaid
-flowchart TD
-
-    USER["You / User"]
-    INBOX["Digital Self Inbox<br/>Unified Input"]
-    ROUTER["Master Router<br/>Routing Agent"]
-    COG["Cognitive Recorder<br/>Cognitive Data Recorder"]
-    EMB["Embodied Recorder<br/>Embodied Data Recorder"]
-    DS["DIGITAL_SELF"]
-
-    USER --> INBOX
-    INBOX --> ROUTER
-
-    ROUTER --> COG
-    ROUTER --> EMB
-
-    COG --> DS
-    EMB --> DS
+                         你
+                         │
+                         ▼
+               Digital Self Inbox
+                  一个统一入口
+                         │
+                         ▼
+                  Master Router
+                   总路由 Agent
+                  /             \
+                 /               \
+                ▼                 ▼
+      Cognitive Recorder    Embodied Recorder
+          大脑记录器            具身记录器
+                \                 /
+                 \               /
+                  ▼             ▼
+                  DIGITAL_SELF
+                    数据仓库
